@@ -2,3 +2,80 @@
 @use "../utils/variables" as var;
 @use "../components/buttons" as btn;
 @use "../layout/flex" as flex;
+
+
+.main_section {
+  padding-bottom: 157px;
+  .main_section_content {
+    @include mix.flex(center, space-between, 20);
+    @media (max-width: 1300px) {
+      flex-direction: column;
+      gap: 30px;
+    }
+    .main_section_content_left {
+      padding-top: 66px;
+      img {
+        width: 100%;
+      }
+    }
+    .main_section_content_right {
+      h3 {
+        text-align: right;
+        @include mix.font(700, 24, 24, 0%);
+        color: var.$bg-1D;
+        span {
+          @include mix.font(500, 24, 24, 0%);
+          color: var.$bg-FB;
+          text-transform: uppercase;
+        }
+        @media (max-width: 1300px) {
+          text-align: center;
+        }
+      }
+      h1 {
+        padding-top: 20px;
+        text-transform: uppercase;
+        max-width: 600px;
+        text-align: right;
+        @include mix.font(650, 64, 76.81, 0%);
+        color: var.$bg-1D;
+        @media (max-width: 1300px) {
+          text-align: center;
+        }
+        @media (max-width: 614px) {
+          @include mix.font(600, 45, 51, 0%);
+        }
+        @media (max-width: 400px) {
+          @include mix.font(600, 35, 45, 0%);
+        }
+      }
+      .main_section_content_right_link {
+        padding-top: 100px;
+        @include mix.flex(center, end, 31);
+        @media (max-width: 580px) {
+          flex-direction: column;
+          gap: 20px;
+        }
+        .main_section_content_right_link-1 {
+          @include mix.font(400, 22, 26.4, 0%);
+          @include btn.btn(25px 30px, 10, 0, var.$bg-FB);
+          color: var.$bg-FF;
+          &:hover,
+          :active {
+            @include btn.btn(25px 30px, 10, 0, var.$bg-FC);
+          }
+        }
+        .main_section_content_right_link-2 {
+          @include mix.font(400, 22, 26.4, 0%);
+          @include btn.btn(25px 30px, 10, 2px solid var.$bg-FB, var.$bg-FF);
+          color: var.$bg-FB;
+          &:hover,
+          :active {
+            @include btn.btn(25px 30px, 10, 2px solid var.$bg-FF, var.$bg-FB);
+            color: var.$bg-FF;
+          }
+        }
+      }
+    }
+  }
+}

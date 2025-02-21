@@ -8,4 +8,81 @@
 @use "../themes/dark--mode";
 @use "../vendors/hamburger";
 
-
+header {
+  background-color: var.$bg-FF;
+  padding: 24px 0;
+  box-shadow: 0px 1px 30px 0px #0000000d;
+  .header_menu {
+    @include mix.flex(center, space-between, 20);
+    @media (max-width: 580px) {
+      flex-direction: column;
+    }
+    .header_menu_logo {
+      @include mix.flex(center, space-between, 0);
+      cursor: pointer;
+      @media (max-width: 580px) {
+        display: flex;
+        gap: 200px;
+      }
+      @media (max-width: 510px) {
+        display: flex;
+        gap: 140px;
+      }
+      @media (max-width: 450px) {
+        display: flex;
+        gap: 90px;
+      }
+      @media (max-width: 390px) {
+        display: flex;
+        gap: 20px;
+      }
+      .login_hamburger_icon {
+        display: none;
+        align-items: center;
+        h2 {
+          @include mix.font(600, 30, 24, 0%);
+          color: var.$bg-1D;
+          opacity: 50%;
+        }
+        @media (max-width: 580px) {
+          display: flex;
+        }
+      }
+    }
+    .visible {
+      display: block !important;
+    }
+    .header__user {
+      @include mix.flex(center, center, 50);
+      @media (max-width: 580px) {
+        @include mix.flex(center, center, 40);
+        display: none;
+      }
+      .user__sig_in {
+        @include mix.font(400, 20, 24, 0%);
+        @include btn.btn(18.5px 41px 18.5px 41px, 10, 0, 0);
+        color: var.$bg-FB;
+        &:hover,
+        :active {
+          color: var.$bg-FF;
+          background: var.$bg-FC;
+        }
+        @media (max-width: 536px) {
+          @include btn.btn(12px 15px 12px 15px, 10, 0, 0);
+        }
+      }
+      .user__sign_up {
+        @include mix.font(400, 20, 24, 0%);
+        @include btn.btn(18.5px 41px 18.5px 41px, 10, 0, var.$bg-FB);
+        color: var.$bg-FF;
+        &:hover,
+        :active {
+          background: var.$bg-FC;
+        }
+        @media (max-width: 536px) {
+          @include btn.btn(12px 15px 12px 15px, 10, 0, var.$bg-FB);
+        }
+      }
+    }
+  }
+}

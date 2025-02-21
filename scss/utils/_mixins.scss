@@ -68,3 +68,15 @@
 @mixin fill($fill) {
   fill: $fill;
 }
+@mixin font($weight, $size, $height, $letter) {
+  font-weight: $weight;
+  font-size: $size + px;
+  line-height: $height + px;
+  letter-spacing: $letter;
+}
+@mixin flex($align, $justify, $gap) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap + px;
+}
